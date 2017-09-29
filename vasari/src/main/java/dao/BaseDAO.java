@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
@@ -21,7 +20,7 @@ import repository.BaseRepository;
  */
 public abstract class BaseDAO<T extends BaseEntity> implements BaseRepository<T> {
 	
-	private static final String PU_NAME = "escola";
+	private static final String PU_NAME = "vasari";
 	
 	@Override
 	public void save(T entity) {
