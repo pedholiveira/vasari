@@ -2,5 +2,18 @@
 
 <!DOCTYPE glassfish-web-app PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Servlet 3.0//EN" "http://glassfish.org/dtds/glassfish-web-app_3_0-1.dtd">
 <glassfish-web-app>
-    <context-root>/av2</context-root>
+    <context-root>/vasari</context-root>
+    
+    <security-role-mapping>
+	    <role-name>admin_role</role-name>
+	    <group-name>ADMINISTRATOR</group-name>
+	</security-role-mapping>
+	<security-role-mapping>
+	    <role-name>professor_role</role-name>
+	    <group-name>PROFESSOR</group-name>
+	</security-role-mapping>
+	<security-role-mapping>
+	    <role-name>student_role</role-name>
+	    <group-name>STUDENT</group-name>
+	</security-role-mapping>
 </glassfish-web-app>

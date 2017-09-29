@@ -1,11 +1,11 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import java.util.List;
 
-import enumeration.CategoryEnum;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  * Entity class for system users.
@@ -20,8 +20,8 @@ public class User extends BaseEntity {
 
 	private String username;
 	private String password;
-	@Enumerated(EnumType.STRING)
-	private CategoryEnum category;
+	@ManyToMany(mappedBy = "users", fetch=FetchType.EAGER)
+	private List<Category> categories;
 
 	/**
 	 * @return username
@@ -54,15 +54,15 @@ public class User extends BaseEntity {
 	/**
 	 * @return category
 	 */
-	public CategoryEnum getCategory() {
-		return category;
+	public List<Category> getCategories() {
+		return categories;
 	}
 
 	/**
 	 * @param category
 	 */
-	public void setCategory(CategoryEnum category) {
-		this.category = category;
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 }

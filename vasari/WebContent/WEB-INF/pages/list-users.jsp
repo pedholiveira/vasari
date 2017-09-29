@@ -20,7 +20,7 @@
 	    	<c:forEach var="user" items="${requestScope.users}">
     			<tr>
     				<td>${user.username }</td>
-    				<td>${user.category }</td>
+    				<td>${user.categories.get(0).name }</td>
     				<td><a href="#">Editar</a></td>
     				<td><a href="#">Excluir</a></td>
     			</tr>
