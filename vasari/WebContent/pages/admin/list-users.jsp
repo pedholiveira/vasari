@@ -21,11 +21,13 @@
     			<tr>
     				<td>${user.username }</td>
     				<td>${user.category }</td>
-    				<td><a href="#">Editar</a></td>
-    				<td><a href="#">Excluir</a></td>
+    				<td><a href="#">Update</a></td>
+    				<td><a href="#">Delete</a></td>
     			</tr>
 			</c:forEach>
     	</tbody>
     </table>
+	<br/>
+	<a href="${pageContext.request.contextPath}/admin/createUser">New user</a>
   </body>
 </html>

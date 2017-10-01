@@ -6,6 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
+import annotation.EnumField;
 import enumeration.CategoryEnum;
 
 /**
@@ -23,6 +24,8 @@ public class User extends BaseEntity {
 	private String username;
 	@Column(name="password", nullable=false, length=65)
 	private String password;
+	
+	@EnumField
 	@Enumerated(EnumType.STRING)
 	@Column(name="category", nullable=false, length=45)
 	private CategoryEnum category;

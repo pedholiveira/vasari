@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import model.User;
 import service.UserService;
 
-@WebServlet(value="/listUser")
-public class ListUserServlet extends HttpServlet {
+@WebServlet("/admin/listUsers")
+public class ListUsersServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -4027159295798624286L;
 
@@ -27,7 +27,7 @@ public class ListUserServlet extends HttpServlet {
 		List<User> users = service.list();
 		req.setAttribute("users", users);
 
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/pages/list-users.jsp");
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/pages/admin/list-users.jsp");
         rd.forward(req, resp);
 	}
 	

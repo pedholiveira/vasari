@@ -16,8 +16,14 @@
 
 	<security-constraint>
 		<web-resource-collection>
-			<web-resource-name>paginas admnistrativas</web-resource-name>
+			<web-resource-name>JSPs admnistrativos</web-resource-name>
 			<url-pattern>/pages/admin/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Servlets admnistrativos</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>

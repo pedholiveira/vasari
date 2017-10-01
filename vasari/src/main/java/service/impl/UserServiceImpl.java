@@ -2,6 +2,8 @@ package service.impl;
 
 import java.util.List;
 
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -21,16 +23,19 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repository;
 	
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void create(User user) {
 		repository.save(user);
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void update(User user) {
 		repository.save(user);
 	}
 
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void delete(User user) {
 		repository.delete(user);
 	}

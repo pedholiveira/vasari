@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>Welcome to the JAAS!</h1>
-    <a href="pages/admin/admin-page.jsp">Login</a>
+    <a href="admin/createUser">Login</a>
   </body>
 </html>

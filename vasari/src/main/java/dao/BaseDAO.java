@@ -24,16 +24,18 @@ public abstract class BaseDAO<T extends BaseEntity> implements BaseRepository<T>
 	
 	@Override
 	public void save(T entity) {
-		getEntityManager().getTransaction().begin();
-		getEntityManager().persist(entity);
-		getEntityManager().getTransaction().commit();
+		EntityManager em = getEntityManager();
+		em.getTransaction().begin();
+		em.persist(entity);
+		em.getTransaction().commit();
 	}
 	
 	@Override
 	public void delete(T entity) {
-		getEntityManager().getTransaction().begin();
-		getEntityManager().remove(entity);
-		getEntityManager().getTransaction().commit();
+		EntityManager em = getEntityManager();
+		em.getTransaction().begin();
+		em.remove(entity);
+		em.getTransaction().commit();
 	}
 	
 	@Override
