@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,9 +19,12 @@ public class User extends BaseEntity {
 	
 	private static final long serialVersionUID = 7884209361845675064L;
 
+	@Column(name="username", nullable=false, length=45)
 	private String username;
+	@Column(name="password", nullable=false, length=65)
 	private String password;
 	@Enumerated(EnumType.STRING)
+	@Column(name="category", nullable=false, length=45)
 	private CategoryEnum category;
 
 	/**

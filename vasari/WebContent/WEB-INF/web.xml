@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>vasari</display-name>
-  
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <login-config>
-        <auth-method>BASIC</auth-method>
-        <realm-name>vasariRealm</realm-name>
-    </login-config>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>vasari</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>vasariRealm</realm-name>
+	</login-config>
 
 	<security-constraint>
-        <web-resource-collection>
-            <web-resource-name>paginas admnistrativas</web-resource-name>
-            <url-pattern>/pages/admin/*</url-pattern>
-            <http-method>GET</http-method>
-            <http-method>POST</http-method>
-        </web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>paginas admnistrativas</web-resource-name>
+			<url-pattern>/pages/admin/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
 
-        <auth-constraint>
-            <role-name>admin-role</role-name>
-        </auth-constraint>
-    </security-constraint>
+		<auth-constraint>
+			<role-name>admin-role</role-name>
+		</auth-constraint>
+	</security-constraint>
 </web-app>
