@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import enumeration.CategoryEnum;
 import model.User;
 import service.UserService;
-import util.ServletUtils;
+import utils.ServletUtils;
 
 @WebServlet("/admin/saveUser")
 public class SaveUser extends HttpServlet {

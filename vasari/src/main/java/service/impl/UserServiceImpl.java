@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import model.User;
 import repository.UserRepository;
 import service.UserService;
+import utils.EncryptionUtils;
 
 /**
  * Implementation of {@link UserService}.
@@ -25,6 +26,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void save(User user) {
+		String password = EncryptionUtils.encryptSHA256(user.getPassword());
+		user.setPassword(password);
+		
 		repository.save(user);
 	}
 
