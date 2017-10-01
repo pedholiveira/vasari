@@ -21,8 +21,8 @@
     			<tr>
     				<td>${user.username }</td>
     				<td>${user.category }</td>
-    				<td><a href="#">Update</a></td>
-    				<td><a href="#">Delete</a></td>
+    				<td><a href="${pageContext.request.contextPath}/admin/updateUser">Update</a></td>
+    				<td><a href="${pageContext.request.contextPath}/admin/deleteUser?id=${user.id }">Delete</a></td>
     			</tr>
 			</c:forEach>
     	</tbody>

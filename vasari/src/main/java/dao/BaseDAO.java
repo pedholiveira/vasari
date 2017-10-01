@@ -34,7 +34,7 @@ public abstract class BaseDAO<T extends BaseEntity> implements BaseRepository<T>
 	public void delete(T entity) {
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
-		em.remove(entity);
+		em.remove(em.merge(entity));
 		em.getTransaction().commit();
 	}
 	

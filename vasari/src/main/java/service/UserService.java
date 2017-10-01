@@ -28,9 +28,9 @@ public interface UserService {
 	/**
 	 * Delete an existing user.
 	 * 
-	 * @param user
+	 * @param id
 	 */
-	public void delete(User user);
+	public void delete(long id);
 	
 	/**
 	 * Find an specifc user by id.

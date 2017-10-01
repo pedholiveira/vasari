@@ -36,7 +36,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void delete(User user) {
+	public void delete(long id) {
+		User user = find(id);
 		repository.delete(user);
 	}
 
