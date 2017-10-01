@@ -21,16 +21,10 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	private UserRepository repository;
-	
-	@Override
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void create(User user) {
-		repository.save(user);
-	}
 
 	@Override
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void update(User user) {
+	public void save(User user) {
 		repository.save(user);
 	}
 

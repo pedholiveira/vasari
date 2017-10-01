@@ -15,16 +15,23 @@ import model.User;
 import service.UserService;
 import util.ServletUtils;
 
-@WebServlet("/admin/createUser")
-public class CreateUser extends HttpServlet {
+@WebServlet("/admin/saveUser")
+public class SaveUser extends HttpServlet {
 
-	private static final long serialVersionUID = -3285426610177338526L;
+	private static final long serialVersionUID = -3072710822164312689L;
 
 	@Inject
 	private UserService service;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		User user = new User();
+		String parameterId = req.getParameter("id");
+		if(parameterId != null) {
+			user = service.find(Long.valueOf(parameterId));
+		}
+		
+		req.setAttribute("user", user);
 		req.setAttribute("categories", CategoryEnum.values());
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/pages/admin/form-user.jsp");
@@ -34,7 +41,11 @@ public class CreateUser extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = ServletUtils.getObjectFromRequest(req, User.class);
-		service.create(user);
+		String parameterId = req.getParameter("id");
+		if(!parameterId.equals("")) {
+			user.setId(Long.valueOf(req.getParameter("id"))); //TODO - Passar id para o utilitário
+		}
+		service.save(user);
 		
 		resp.sendRedirect(req.getContextPath() + "/admin/listUsers");
 	}

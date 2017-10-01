@@ -2,15 +2,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
   <head>
-    <title>Creating a new user</title>
+    <title>User</title>
   </head>
   <body>
-  	<form action="${pageContext.request.contextPath}/admin/createUser" method="post">
+  	<form action="${pageContext.request.contextPath}/admin/saveUser" method="post">
+  		<input name="id" type="hidden" value="${requestScope.user.id }"/>
   		<label>Username: </label>
-  		<input name="username" type="text" />
+  		<input name="username" type="text" value="${requestScope.user.username }" />
   		<br/>
   		<label>Password: </label>
-  		<input name="password" type="password" />
+  		<input name="password" type="password" value="${requestScope.user.password }" />
   		<br/>
   		<label>Category: </label>
   		<select name="category">
@@ -20,7 +21,7 @@
   		</select>
   		<br/>
   		<br/>
-  		<input value="Create" type="submit" />
+  		<input value="Save" type="submit" />
   	</form>
   </body>
 </html>

@@ -21,13 +21,13 @@
     			<tr>
     				<td>${user.username }</td>
     				<td>${user.category }</td>
-    				<td><a href="${pageContext.request.contextPath}/admin/updateUser">Update</a></td>
+    				<td><a href="${pageContext.request.contextPath}/admin/saveUser?id=${user.id }">Update</a></td>
     				<td><a href="${pageContext.request.contextPath}/admin/deleteUser?id=${user.id }">Delete</a></td>
     			</tr>
 			</c:forEach>
     	</tbody>
     </table>
 	<br/>
-	<a href="${pageContext.request.contextPath}/admin/createUser">New user</a>
+	<a href="${pageContext.request.contextPath}/admin/saveUser">New user</a>
   </body>
 </html>

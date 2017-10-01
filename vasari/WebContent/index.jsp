@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>Welcome to the JAAS!</h1>
-    <a href="admin/createUser">Login</a>
+    <a href="admin/listUsers">Login</a>
   </body>
 </html>

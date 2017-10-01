@@ -12,18 +12,11 @@ import model.User;
 public interface UserService {
 	
 	/**
-	 * Create a new user.
+	 * Save an user instance.
 	 * 
 	 * @param user
 	 */
-	public void create(User user);
-	
-	/**
-	 * Update an existing user.
-	 * 
-	 * @param user
-	 */
-	public void update(User user);
+	public void save(User user);
 	
 	/**
 	 * Delete an existing user.

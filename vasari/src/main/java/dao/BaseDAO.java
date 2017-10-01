@@ -20,13 +20,17 @@ import repository.BaseRepository;
  */
 public abstract class BaseDAO<T extends BaseEntity> implements BaseRepository<T> {
 	
-	private static final String PU_NAME = "escola";
+	private static final String PU_NAME = "vasari";
 	
 	@Override
 	public void save(T entity) {
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
-		em.persist(entity);
+		if(entity.getId() != null) {
+			em.merge(entity);
+		} else {
+			em.persist(entity);
+		}
 		em.getTransaction().commit();
 	}
 	
