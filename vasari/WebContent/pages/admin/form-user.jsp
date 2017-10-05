@@ -2,18 +2,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
   <head>
-    <title>User</title>
+    <title>Usuário</title>
   </head>
   <body>
+  	<c:import url="../../header.jsp" />
+  	
   	<form action="${pageContext.request.contextPath}/admin/saveUser" method="post">
   		<input name="id" type="hidden" value="${requestScope.user.id }"/>
-  		<label>Username: </label>
+  		<label>Apelido: </label>
   		<input name="username" type="text" value="${requestScope.user.username }" required="required" />
   		<br/>
-  		<label>Password: </label>
+  		<label>Senha: </label>
   		<input name="password" type="password" required="required" />
   		<br/>
-  		<label>Category: </label>
+  		<label>Categoria: </label>
   		<select name="category" required="required">
   			<c:forEach var="category" items="${requestScope.categories }">
   				<c:choose>
@@ -30,5 +32,7 @@
   		<br/>
   		<input value="Save" type="submit" />
   	</form>
+  	
+  	<c:import url="../../footer.jsp" />
   </body>
 </html>

@@ -7,6 +7,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
+import enumeration.CategoryEnum;
 import model.User;
 import repository.UserRepository;
 import service.UserService;
@@ -47,6 +48,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> list() {
 		return repository.listAll();
+	}
+	
+	@Override
+	public List<User> list(CategoryEnum category) {
+		return repository.list(category);
 	}
 
 }

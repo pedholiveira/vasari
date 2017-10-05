@@ -11,23 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import enumeration.CategoryEnum;
 import model.User;
 import service.UserService;
 
-@WebServlet("/admin/listUsers")
-public class ListUsersServlet extends HttpServlet {
+@WebServlet("/professor/listProfessors")
+public class ListProfessors extends HttpServlet {
 
-	private static final long serialVersionUID = -4027159295798624286L;
+	private static final long serialVersionUID = -3547013925837955187L;
 
 	@Inject
 	private UserService service;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<User> users = service.list();
+		List<User> users = service.list(CategoryEnum.PROFESSOR);
 		req.setAttribute("users", users);
 
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/pages/admin/list-users.jsp");
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/pages/professor/list-professors.jsp");
         rd.forward(req, resp);
 	}
 	

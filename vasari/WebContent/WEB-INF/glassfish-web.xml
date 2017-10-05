@@ -8,4 +8,17 @@
         <role-name>admin-role</role-name>
         <group-name>ADMINISTRATOR</group-name>
     </security-role-mapping>
+    
+    <security-role-mapping>
+        <role-name>professor-role</role-name>
+        <group-name>PROFESSOR</group-name>
+        <group-name>ADMINISTRATOR</group-name>
+    </security-role-mapping>
+    
+    <security-role-mapping>
+        <role-name>student-role</role-name>
+        <group-name>STUDENT</group-name>
+        <group-name>PROFESSOR</group-name>
+        <group-name>ADMINISTRATOR</group-name>
+    </security-role-mapping>
 </glassfish-web-app>

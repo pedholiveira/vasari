@@ -4,7 +4,7 @@
 <%@page import="java.util.List"%>
 <html>
   <head>
-    <title>CRUD Admnistrativo</title>
+    <title>Listagem de Alunos</title>
   </head>
   <body>
 	<c:import url="../../header.jsp" />
@@ -14,8 +14,6 @@
     		<tr>
     			<td>Username</td>
     			<td>Category</td>
-    			<td></td>
-    			<td></td>
     		</tr>
     	</thead>
     	<tbody>
@@ -23,15 +21,10 @@
     			<tr>
     				<td>${user.username }</td>
     				<td>${user.category }</td>
-    				<td><a href="${pageContext.request.contextPath}/admin/saveUser?id=${user.id }">Update</a></td>
-    				<td><a href="${pageContext.request.contextPath}/admin/deleteUser?id=${user.id }">Delete</a></td>
     			</tr>
 			</c:forEach>
     	</tbody>
     </table>
-	<br/>
-	<a href="${pageContext.request.contextPath}/admin/saveUser">New user</a>
-	<br/>
 	
 	<c:import url="../../footer.jsp" />
   </body>

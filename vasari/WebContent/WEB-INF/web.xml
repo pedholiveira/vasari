@@ -10,26 +10,50 @@
 	</welcome-file-list>
 
 	<login-config>
-		<auth-method>BASIC</auth-method>
+		<auth-method>FORM</auth-method>
 		<realm-name>vasariRealm</realm-name>
+		<form-login-config>
+            <form-login-page>/pages/login.jsp</form-login-page>
+            <form-error-page>/pages/authentication-error.jsp</form-error-page>
+        </form-login-config>
 	</login-config>
 
 	<security-constraint>
 		<web-resource-collection>
-			<web-resource-name>JSPs admnistrativos</web-resource-name>
+			<web-resource-name>JSPs admnistradores</web-resource-name>
 			<url-pattern>/pages/admin/*</url-pattern>
-			<http-method>GET</http-method>
-			<http-method>POST</http-method>
-		</web-resource-collection>
-		<web-resource-collection>
-			<web-resource-name>Servlets admnistrativos</web-resource-name>
-			<url-pattern>/admin/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>
 
 		<auth-constraint>
 			<role-name>admin-role</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>JSPs para professores</web-resource-name>
+			<url-pattern>/pages/professor/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+
+		<auth-constraint>
+			<role-name>professor-role</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>JSPs para alunos</web-resource-name>
+			<url-pattern>/pages/student/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+
+		<auth-constraint>
+			<role-name>student-role</role-name>
 		</auth-constraint>
 	</security-constraint>
 </web-app>

@@ -2,6 +2,7 @@ package service;
 
 import java.util.List;
 
+import enumeration.CategoryEnum;
 import model.User;
 
 /**
@@ -39,4 +40,13 @@ public interface UserService {
 	 * @return users
 	 */
 	public List<User> list();
+	
+	/**
+	 * List users by category.
+	 * 
+	 * @param category
+	 * @return
+	 */
+	public List<User> list(CategoryEnum category);
+	
 }
