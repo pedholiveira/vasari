@@ -21,7 +21,7 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>JSPs admnistradores</web-resource-name>
-			<url-pattern>/pages/admin/*</url-pattern>
+			<url-pattern>/admin/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>
@@ -34,7 +34,7 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>JSPs para professores</web-resource-name>
-			<url-pattern>/pages/professor/*</url-pattern>
+			<url-pattern>/professor/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>
@@ -47,7 +47,7 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>JSPs para alunos</web-resource-name>
-			<url-pattern>/pages/student/*</url-pattern>
+			<url-pattern>/student/*</url-pattern>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>
